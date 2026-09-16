@@ -1,5 +1,7 @@
 import ResourcePage from './ResourcePage.jsx'
 
+const endpointTemplate = `https://${import.meta.env.VITE_CODESPACE_NAME}-8000.app.github.dev/api/teams/`
+
 const columns = [
   {
     key: 'name',
@@ -36,6 +38,7 @@ function Teams() {
       description="Community squads organized by city, focus area, and captain leadership."
       columns={columns}
       emptyMessage="No teams are available yet."
+      endpointTemplate={endpointTemplate}
     />
   )
 }

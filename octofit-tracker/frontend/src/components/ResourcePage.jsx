@@ -33,7 +33,14 @@ function renderCell(column, item) {
   return value
 }
 
-function ResourcePage({ resource, title, description, columns, emptyMessage }) {
+function ResourcePage({
+  resource,
+  title,
+  description,
+  columns,
+  emptyMessage,
+  endpointTemplate,
+}) {
   const [items, setItems] = useState([])
   const [meta, setMeta] = useState(emptyMeta)
   const [error, setError] = useState('')
@@ -85,6 +92,11 @@ function ResourcePage({ resource, title, description, columns, emptyMessage }) {
             <p className="status-note mb-0">
               Endpoint: <code>{getResourceUrl(resource)}</code>
             </p>
+            {endpointTemplate ? (
+              <p className="status-note mb-0 mt-1">
+                Codespaces template: <code>{endpointTemplate}</code>
+              </p>
+            ) : null}
           </div>
           <span className="badge rounded-pill text-bg-dark">{getSummary(meta)}</span>
         </div>

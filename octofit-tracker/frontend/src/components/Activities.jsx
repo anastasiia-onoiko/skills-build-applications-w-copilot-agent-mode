@@ -1,6 +1,8 @@
 import ResourcePage from './ResourcePage.jsx'
 import { formatDate, formatLabel, getLinkedName } from './resourceApi.js'
 
+const endpointTemplate = `https://${import.meta.env.VITE_CODESPACE_NAME}-8000.app.github.dev/api/activities/`
+
 const columns = [
   {
     key: 'user',
@@ -42,6 +44,7 @@ function Activities() {
       description="Recent workouts with duration, effort level, and calories burned."
       columns={columns}
       emptyMessage="No activities are available yet."
+      endpointTemplate={endpointTemplate}
     />
   )
 }

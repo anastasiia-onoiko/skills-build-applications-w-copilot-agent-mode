@@ -1,6 +1,8 @@
 import ResourcePage from './ResourcePage.jsx'
 import { formatLabel, getLinkedName } from './resourceApi.js'
 
+const endpointTemplate = `https://${import.meta.env.VITE_CODESPACE_NAME}-8000.app.github.dev/api/users/`
+
 const columns = [
   {
     key: 'name',
@@ -42,6 +44,7 @@ function Users() {
       description="Profiles, goals, and team assignments for each Octofit member."
       columns={columns}
       emptyMessage="No users are available yet."
+      endpointTemplate={endpointTemplate}
     />
   )
 }

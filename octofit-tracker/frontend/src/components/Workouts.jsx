@@ -1,6 +1,8 @@
 import ResourcePage from './ResourcePage.jsx'
 import { formatDate, getLinkedName } from './resourceApi.js'
 
+const endpointTemplate = `https://${import.meta.env.VITE_CODESPACE_NAME}-8000.app.github.dev/api/workouts/`
+
 const columns = [
   {
     key: 'user',
@@ -47,6 +49,7 @@ function Workouts() {
       description="Scheduled training plans with coaching prompts and target areas."
       columns={columns}
       emptyMessage="No workouts are available yet."
+      endpointTemplate={endpointTemplate}
     />
   )
 }
