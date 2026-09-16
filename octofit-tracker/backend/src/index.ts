@@ -7,13 +7,11 @@ import leaderboardRouter from './routes/leaderboard';
 import teamsRouter from './routes/teams';
 import usersRouter from './routes/users';
 import workoutsRouter from './routes/workouts';
-import { getApiBaseUrl } from './utils/apiUrl';
+import { HOST, PORT, getApiBaseUrl } from './server';
 
 dotenv.config();
 
 const app = express();
-const PORT = 8000;
-const HOST = '0.0.0.0';
 
 app.use(cors());
 app.use(express.json());
