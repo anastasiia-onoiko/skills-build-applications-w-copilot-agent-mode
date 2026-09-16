@@ -13,6 +13,7 @@ dotenv.config();
 
 const app = express();
 const PORT = 8000;
+const HOST = '0.0.0.0';
 
 app.use(cors());
 app.use(express.json());
@@ -41,6 +42,6 @@ app.use('/api/activities', activitiesRouter);
 app.use('/api/leaderboard', leaderboardRouter);
 app.use('/api/workouts', workoutsRouter);
 
-app.listen(PORT, () => {
+app.listen(PORT, HOST, () => {
   console.log(`Octofit Tracker API listening at ${getApiBaseUrl()}`);
 });
